@@ -1,0 +1,55 @@
+<div formGroupName="personal">
+  <p class="display-6">Personal Information</p>
+  <div class="row">
+    <div class="col">
+      <app-required-field
+        formControlName="first"
+        validationMsg="First Name Required"
+        placeholder="First name"
+      >
+      </app-required-field>
+    </div>
+    <div class="col">
+      <app-required-field
+        formControlName="last"
+        validationMsg="Last Name Required"
+        placeholder="Last name"
+      >
+      </app-required-field>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col">
+      <app-required-select
+        formControlName="gender"
+        placeholder="Select gender..."
+        [options]="genderOptions"
+        validationMsg="Gender Required"
+      ></app-required-select>
+    </div>
+  </div> -->
+  <!-- <ng-container
+    *ngIf="parentForm.get('personal')?.get('gender')?.value === 'Other'"
+  >
+    <div class="row">
+      <div class="col">
+        <app-required-field formControlName="genderOther" placeholder="Specify">
+        </app-required-field>
+      </div>
+    </div>
+  </ng-container> -->
+
+  <ng-container>
+    <div class="col">
+      <app-required-multi-select
+        placeholder="'Select City'"
+        data="data"
+        formControlName="cities"
+        [settings]="settings"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="onDeSelect($event)"
+        validationMsg="multi select"
+      ></app-required-multi-select>
+    </div>
+  </ng-container>
+</div>

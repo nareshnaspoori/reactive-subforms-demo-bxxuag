@@ -1,0 +1,21 @@
+<div class="mb-3" >
+  <ng-multiselect-dropdown
+    #multiSelect
+    placeholder="placeholder"
+    data="data"
+    settings="settings"
+    disabled="false"
+    [ngClass]="{
+      'is-invalid': controlDir?.control?.touched && !controlDir.control?.valid
+    }"
+    (onFilterChange)="onFilterChange($event)"
+    (onDropDownClose)="onDropDownClose($event)"
+    (onSelect)="onItemSelect($event)"
+    (onDeSelect)="onDeSelect($event)"
+    (onSelectAll)="onSelectAll($event)"
+    (onDeSelectAll)="onDeSelectAll($event)"
+  >
+  </ng-multiselect-dropdown>
+
+  <div class="invalid-feedback">{{ validationMsg }}</div>
+</div>
